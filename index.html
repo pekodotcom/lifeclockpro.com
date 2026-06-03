@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <title>LIFE CLOCK PRO - Track Your Life Down to the Millisecond</title>
+    <meta name="description" content="A premium, highly interactive age calculator that tracks your exact age in years, months, weeks, days, hours, minutes, seconds, and milliseconds.">
+    <meta name="keywords" content="age calculator, exact age, life clock, life tracker, countdown to birthday, life timeline">
+
+    <link rel="canonical" href="https://example.com/life-clock-pro">
+
+    <meta property="og:title" content="LIFE CLOCK PRO - Ultimate Age Calculator">
+    <meta property="og:description" content="Calculate your exact age down to the millisecond with our live dashboard.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://example.com/life-clock-pro">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="LIFE CLOCK PRO">
+    <meta name="twitter:description" content="Track your life down to the millisecond.">
+
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; img-src 'self' data: https:;">
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%230a192f'/%3E%3Cpath d='M50 20 L50 50 L70 70' stroke='%23ffffff' stroke-width='8' stroke-linecap='round' fill='none'/%3E%3C/svg%3E">
+    <style>
+        :root {
+            /* Deep Blue Primary Theme */
+            --primary: #0a192f;
+            --primary-light: #172a45;
+            --primary-dark: #020c1b;
+            --accent: #2563eb;
+            --accent-hover: #1d4ed8;
+            --accent-gradient: linear-gradient(135deg, #2563eb, #1e40af);
+
+            /* Crisp White Surfaces */
+            --surface: #ffffff;
+            --surface-alt: #f8fafc;
+            --background: #f1f5f9;
+
+            /* Typography */
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --text-inverse: #ffffff;
+
+            /* Shadows & Borders */
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
+            --shadow-lg: 0 10px 25px -3px rgba(0,0,0,0.08), 0 4px 6px -2px rgba(0,0,0,0.04);
+            --border-radius: 12px;
+            --border-color: #e2e8f0;
+
+            /* Layout */
+            --container-max: 1280px;
+            --ad-bg: #e2e8f0;
+            --ad-text: #94a3b8;
+        }
+
+        /* Base Reset */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--background);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            color: var(--primary);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 0.5em;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--text-muted);
+        }
+
+        /* Tabular numbers for counters to prevent jitter */
+        .tabular-nums {
+            font-variant-numeric: tabular-nums;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        }
+
+        /* Layout Architecture */
+        .site-wrapper {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .header {
+            background-color: var(--primary);
+            color: var(--text-inverse);
+            padding: 1.5rem 1rem;
+            box-shadow: var(--shadow-md);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 0.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .header-content {
+                flex-direction: row;
+                justify-content: space-between;
+                text-align: left;
+            }
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+            color: var(--text-inverse);
+        }
+
+        .brand-text h1 {
+            color: var(--text-inverse);
+            font-size: 1.5rem;
+            margin: 0;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .brand-text p {
+            color: #94a3b8;
+            font-size: 0.875rem;
+            margin: 0;
+        }
+
+        .logo-container {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Main Grid */
+        .main-container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 2rem 1rem;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            flex: 1;
+        }
+
+        @media (min-width: 1024px) {
+            .main-container {
+                grid-template-columns: 200px 1fr 200px;
+                padding: 2rem;
+            }
+        }
+
+        .content-area {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+            min-width: 0; /* Prevents flex overflow */
+        }
+
+        /* Ad Slots */
+        .ad-slot {
+            background-color: var(--ad-bg);
+            border: 2px dashed #cbd5e1;
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--ad-text);
+            font-size: 0.875rem;
+            text-align: center;
+            padding: 1rem;
+            overflow: hidden;
+        }
+
+        .ad-banner-top { width: 100%; min-height: 90px; margin-bottom: 2rem; }
+        .ad-banner-mid { width: 100%; min-height: 250px; margin: 2rem 0; }
+        .ad-sidebar { min-height: 600px; display: none; position: sticky; top: 100px; }
+
+        @media (min-width: 1024px) {
+            .ad-sidebar { display: flex; }
+        }
+
+        /* Cards */
+        .card {
+            background-color: var(--surface);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card-header {
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        /* Form Controls */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            color: var(--text-main);
+            background-color: var(--surface-alt);
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .input-row {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        @media (min-width: 640px) {
+            .input-row {
+                grid-template-columns: 2fr 1fr;
+            }
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 2rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            width: 100%;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary {
+            background: var(--accent-gradient);
+            color: var(--text-inverse);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-primary:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-1px);
+        }
+
+        .btn-primary:active {
+            transform: translateY(1px);
+        }
+
+        /* Dashboard Results */
+        .dashboard {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .dashboard.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Exact Age Breakdown */
+        .exact-age-display {
+            background-color: var(--primary);
+            color: var(--text-inverse);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .exact-age-display::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 4px;
+            background: var(--accent-gradient);
+        }
+
+        .main-age {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .main-age span.unit {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-right: 0.5rem;
+        }
+
+        .sub-age-breakdown {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .sub-unit {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 60px;
+        }
+
+        .sub-unit-val {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #e2e8f0;
+        }
+
+        .sub-unit-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: #94a3b8;
+            letter-spacing: 0.5px;
+        }
+
+        /* Totals Grid */
+        .totals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .total-card {
+            background: var(--surface-alt);
+            padding: 1.5rem 1rem;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+        }
+
+        .total-val {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.25rem;
+            word-break: break-all;
+        }
+
+        .total-label {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Info Cards */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .info-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .info-card {
+            background: var(--surface);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .info-card h4 {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .lang-list {
+            list-style: none;
+        }
+
+        .lang-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .lang-list li:last-child {
+            border-bottom: none;
+        }
+
+        .lang-label {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .lang-val {
+            color: var(--text-main);
+            font-size: 1.125rem;
+        }
+
+        /* Next Birthday Countdown */
+        .countdown-container {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--surface-alt);
+            border-radius: 8px;
+            border: 1px solid var(--accent);
+        }
+
+        .countdown-title {
+            color: var(--accent);
+            font-size: 1.125rem;
+            margin-bottom: 1rem;
+        }
+
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        /* Timeline */
+        .timeline-container {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: var(--surface-alt);
+            border-radius: 8px;
+        }
+
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .progress-bar-bg {
+            width: 100%;
+            height: 12px;
+            background: #e2e8f0;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background: var(--accent-gradient);
+            width: 0%;
+            transition: width 1s ease-out;
+        }
+
+        /* Typography Content Sections */
+        .content-section {
+            background: var(--surface);
+            padding: 2.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-md);
+        }
+
+        .content-section h2 {
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--surface-alt);
+            padding-bottom: 0.5rem;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .faq-item h3 {
+            font-size: 1.125rem;
+            color: var(--primary-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .security-note {
+            background-color: #f0fdf4;
+            border-left: 4px solid #16a34a;
+            padding: 1.5rem;
+            border-radius: 4px;
+        }
+
+        .security-note h3 {
+            color: #166534;
+            margin-bottom: 0.5rem;
+            font-size: 1.125rem;
+        }
+
+        .security-note p {
+            color: #15803d;
+            margin: 0;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--primary-dark);
+            color: #94a3b8;
+            padding: 3rem 1rem;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            max-width: var(--container-max);
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--surface);
+        }
+
+        .footer p {
+            font-size: 0.875rem;
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "LIFE CLOCK PRO",
+      "description": "Premium age calculator to track your life down to the millisecond.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "All",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+</head>
+<body>
+
+    <div class="site-wrapper">
+        <header class="header">
+            <div class="header-content">
+                <a href="#" class="brand" aria-label="Life Clock Pro Home">
+                    <div class="logo-container">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='none' stroke='%23ffffff' stroke-width='4'/%3E%3Cpath d='M50 20 L50 50 L70 70' stroke='%23ffffff' stroke-width='6' stroke-linecap='round' fill='none'/%3E%3C/svg%3E" alt="Life Clock Pro Logo" style="width: 100%; height: 100%; object-fit: contain;">
+                        </div>
+                    <div class="brand-text">
+                        <h1>Life Clock Pro</h1>
+                        <p>Track Your Life Down to the Millisecond</p>
+                    </div>
+                </a>
+            </div>
+        </header>
+
+        <div class="main-container">
+
+            <aside class="ad-sidebar">
+                <div class="ad-slot" style="width: 100%; height: 100%;">
+                    Left Sidebar Ad Area<br>(Placeholder)
+                </div>
+            </aside>
+
+            <main class="content-area">
+
+                <div class="ad-banner-top">
+                    <div class="ad-slot" style="width: 100%; height: 100%;">
+                        Top Banner Ad Area (Placeholder)
+                    </div>
+                </div>
+
+                <section class="card" aria-labelledby="calc-heading">
+                    <div class="card-header">
+                        <h2 id="calc-heading">Enter Your Birth Details</h2>
+                        <p>Discover your exact age and life timeline instantly.</p>
+                    </div>
+                    <form id="age-form" novalidate>
+                        <div class="input-row">
+                            <div class="form-group">
+                                <label for="dob-date" class="form-label">Date of Birth *</label>
+                                <input type="date" id="dob-date" class="form-control" required aria-required="true">
+                            </div>
+                            <div class="form-group">
+                                <label for="dob-time" class="form-label">Time of Birth (Optional)</label>
+                                <input type="time" id="dob-time" class="form-control" value="00:00">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Calculate Life Clock</button>
+                    </form>
+                </section>
+
+                <section id="results-dashboard" class="dashboard" aria-live="polite">
+
+                    <div class="exact-age-display">
+                        <div class="main-age tabular-nums">
+                            <span id="exact-years">0</span><span class="unit">Years</span>
+                            <span id="exact-months">0</span><span class="unit">Months</span>
+                            <span id="exact-days">0</span><span class="unit">Days</span>
+                        </div>
+                        <div class="sub-age-breakdown tabular-nums">
+                            <div class="sub-unit">
+                                <span id="exact-hours" class="sub-unit-val">00</span>
+                                <span class="sub-unit-label">Hours</span>
+                            </div>
+                            <div class="sub-unit" style="font-size: 1.5rem; color:#e2e8f0; font-weight:700;">:</div>
+                            <div class="sub-unit">
+                                <span id="exact-mins" class="sub-unit-val">00</span>
+                                <span class="sub-unit-label">Minutes</span>
+                            </div>
+                            <div class="sub-unit" style="font-size: 1.5rem; color:#e2e8f0; font-weight:700;">:</div>
+                            <div class="sub-unit">
+                                <span id="exact-secs" class="sub-unit-val">00</span>
+                                <span class="sub-unit-label">Seconds</span>
+                            </div>
+                            <div class="sub-unit" style="font-size: 1.5rem; color:#e2e8f0; font-weight:700;">.</div>
+                            <div class="sub-unit">
+                                <span id="exact-ms" class="sub-unit-val" style="color: var(--accent); min-width: 45px; text-align: left;">000</span>
+                                <span class="sub-unit-label">MS</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 style="margin-bottom: 1rem; text-align: center;">Total Elapsed Time</h3>
+                    <div class="totals-grid tabular-nums">
+                        <div class="total-card">
+                            <div id="tot-months" class="total-val">0</div>
+                            <div class="total-label">Months</div>
+                        </div>
+                        <div class="total-card">
+                            <div id="tot-weeks" class="total-val">0</div>
+                            <div class="total-label">Weeks</div>
+                        </div>
+                        <div class="total-card">
+                            <div id="tot-days" class="total-val">0</div>
+                            <div class="total-label">Days</div>
+                        </div>
+                        <div class="total-card">
+                            <div id="tot-hours" class="total-val">0</div>
+                            <div class="total-label">Hours</div>
+                        </div>
+                        <div class="total-card">
+                            <div id="tot-mins" class="total-val">0</div>
+                            <div class="total-label">Minutes</div>
+                        </div>
+                        <div class="total-card">
+                            <div id="tot-secs" class="total-val">0</div>
+                            <div class="total-label">Seconds</div>
+                        </div>
+                    </div>
+
+                    <div class="info-grid">
+                        <div class="info-card">
+                            <h4>Birth Information</h4>
+                            <ul class="lang-list">
+                                <li>
+                                    <span class="lang-label">Day of Week:</span>
+                                    <span id="birth-weekday" class="lang-val">-</span>
+                                </li>
+                                <li>
+                                    <span class="lang-label">Month (English):</span>
+                                    <span id="month-en" class="lang-val">-</span>
+                                </li>
+                                <li>
+                                    <span class="lang-label">Month (Bengali):</span>
+                                    <span id="month-bn" class="lang-val" style="font-family: sans-serif;">-</span>
+                                </li>
+                                <li>
+                                    <span class="lang-label">Month (Arabic):</span>
+                                    <span id="month-ar" class="lang-val" style="font-family: sans-serif;">-</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="info-card">
+                            <h4>Next Birthday</h4>
+                            <div class="countdown-container">
+                                <div class="countdown-title" id="next-bday-date">Upcoming</div>
+                                <div class="countdown-timer tabular-nums">
+                                    <div class="sub-unit">
+                                        <span id="cd-months" class="sub-unit-val" style="color:var(--primary)">0</span>
+                                        <span class="sub-unit-label">Months</span>
+                                    </div>
+                                    <div class="sub-unit">
+                                        <span id="cd-days" class="sub-unit-val" style="color:var(--primary)">0</span>
+                                        <span class="sub-unit-label">Days</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="timeline-container">
+                                <div class="progress-label">
+                                    <span>Current Year Progress</span>
+                                    <span id="year-progress-pct">0%</span>
+                                </div>
+                                <div class="progress-bar-bg">
+                                    <div id="year-progress-fill" class="progress-bar-fill"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+
+                <div class="ad-banner-mid">
+                    <div class="ad-slot" style="width: 100%; height: 100%;">
+                        Mid-Content Ad Area (Placeholder)
+                    </div>
+                </div>
+
+                <section class="content-section">
+                    <h2>About Life Clock Pro</h2>
+                    <p>Life Clock Pro is a premium, high-precision utility designed to provide a comprehensive breakdown of your age. Utilizing advanced calendar mathematics, the tool accounts for leap years, varying month lengths, and local timezone nuances to ensure absolute accuracy.</p>
+                    <p>Unlike standard age calculators, Life Clock Pro renders your timeline continuously. The live dashboard tracks milliseconds in real-time securely within your browser, ensuring no data is transmitted or stored externally.</p>
+                </section>
+
+                <section class="content-section">
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-item">
+                        <h3>How accurate is the millisecond counter?</h3>
+                        <p>Extremely accurate. It uses your device's internal high-resolution clock and JavaScript's native Date object, recalculating the exact time differential up to 60 times per second for smooth visual rendering.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Does it account for leap years?</h3>
+                        <p>Yes. The underlying calendar logic automatically processes leap years when calculating total days and exact breakdown matrices, ensuring year boundaries are respected perfectly.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Is my birth date data saved anywhere?</h3>
+                        <p>No. All calculations are performed entirely client-side in your web browser. No data is sent to our servers, maintaining complete privacy.</p>
+                    </div>
+                </section>
+
+                <section class="security-note">
+                    <h3>Security & Privacy Guaranteed</h3>
+                    <p>This application operates under strict security principles. No user inputs are stored, cookies are not used for tracking your personal date, and DOM rendering uses safe text insertion methods to prevent Cross-Site Scripting (XSS). Your personal timeline remains yours alone.</p>
+                </section>
+
+                <div class="ad-banner-top" style="margin-top: 2rem;">
+                    <div class="ad-slot" style="width: 100%; height: 100%;">
+                        Bottom Content Ad Area (Placeholder)
+                    </div>
+                </div>
+
+            </main>
+
+            <aside class="ad-sidebar">
+                <div class="ad-slot" style="width: 100%; height: 100%;">
+                    Right Sidebar Ad Area<br>(Placeholder)
+                </div>
+            </aside>
+
+        </div>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="ad-banner-top" style="max-width: 728px; margin: 0 auto 2rem auto; min-height: 90px;">
+                    <div class="ad-slot" style="width: 100%; height: 100%; border-color: #475569; background: #1e293b;">
+                        Footer Ad Area (Placeholder)
+                    </div>
+                </div>
+
+                <ul class="footer-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+                <p>&copy; <span id="current-year"></span> Life Clock Pro. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        (function() {
+            'use strict';
+
+            // Constants for localization
+            const monthNames = [
+                { en: "January", bn: "জানুয়ারি", ar: "يناير" },
+                { en: "February", bn: "ফেব্রুয়ারি", ar: "فبراير" },
+                { en: "March", bn: "মার্চ", ar: "مارس" },
+                { en: "April", bn: "এপ্রিল", ar: "أبريل" },
+                { en: "May", bn: "মে", ar: "مايو" },
+                { en: "June", bn: "জুন", ar: "يونيو" },
+                { en: "July", bn: "জুলাই", ar: "يوليو" },
+                { en: "August", bn: "আগস্ট", ar: "أغسطس" },
+                { en: "September", bn: "সেপ্টেম্বর", ar: "سبتمبر" },
+                { en: "October", bn: "অক্টোবর", ar: "أكتوبر" },
+                { en: "November", bn: "নভেম্বর", ar: "نوفمبر" },
+                { en: "December", bn: "ডিসেম্বর", ar: "ديسمبر" }
+            ];
+
+            const MS_PER_SEC = 1000;
+            const MS_PER_MIN = 60 * MS_PER_SEC;
+            const MS_PER_HOUR = 60 * MS_PER_MIN;
+            const MS_PER_DAY = 24 * MS_PER_HOUR;
+            const MS_PER_WEEK = 7 * MS_PER_DAY;
+
+            // DOM Elements
+            const form = document.getElementById('age-form');
+            const dobDateInput = document.getElementById('dob-date');
+            const dobTimeInput = document.getElementById('dob-time');
+            const dashboard = document.getElementById('results-dashboard');
+
+            // Set max date to today to prevent future births
+            const todayStr = new Date().toISOString().split('T')[0];
+            dobDateInput.setAttribute('max', todayStr);
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+
+            let birthDateObj = null;
+            let animationFrameId = null;
+
+            // Utility: Secure Text Updates
+            function updateText(id, text) {
+                const el = document.getElementById(id);
+                if (el) el.textContent = text;
+            }
+
+            // Utility: Pad numbers
+            function pad(num, size = 2) {
+                let s = num.toString();
+                while (s.length < size) s = "0" + s;
+                return s;
+            }
+
+            // Core Math
+            function calculateAgeDetails() {
+                if (!birthDateObj) return;
+
+                const now = new Date();
+                if (now < birthDateObj) return; // Prevent negative time if clock changes
+
+                const diffTotalMs = now.getTime() - birthDateObj.getTime();
+
+                // Totals
+                const totalDays = Math.floor(diffTotalMs / MS_PER_DAY);
+                const totalWeeks = Math.floor(diffTotalMs / MS_PER_WEEK);
+                const totalHours = Math.floor(diffTotalMs / MS_PER_HOUR);
+                const totalMins = Math.floor(diffTotalMs / MS_PER_MIN);
+                const totalSecs = Math.floor(diffTotalMs / MS_PER_SEC);
+
+                // For exact months/years total, approximate by average month length or calculate exactly
+                let monthsTotal = (now.getFullYear() - birthDateObj.getFullYear()) * 12 + (now.getMonth() - birthDateObj.getMonth());
+                if (now.getDate() < birthDateObj.getDate()) {
+                    monthsTotal--;
+                }
+
+                updateText('tot-months', monthsTotal.toLocaleString());
+                updateText('tot-weeks', totalWeeks.toLocaleString());
+                updateText('tot-days', totalDays.toLocaleString());
+                updateText('tot-hours', totalHours.toLocaleString());
+                updateText('tot-mins', totalMins.toLocaleString());
+                updateText('tot-secs', totalSecs.toLocaleString());
+
+                // Exact Breakdown
+                let years = now.getFullYear() - birthDateObj.getFullYear();
+                let months = now.getMonth() - birthDateObj.getMonth();
+                let days = now.getDate() - birthDateObj.getDate();
+                let hours = now.getHours() - birthDateObj.getHours();
+                let mins = now.getMinutes() - birthDateObj.getMinutes();
+                let secs = now.getSeconds() - birthDateObj.getSeconds();
+                let ms = now.getMilliseconds() - birthDateObj.getMilliseconds();
+
+                if (ms < 0) { ms += 1000; secs--; }
+                if (secs < 0) { secs += 60; mins--; }
+                if (mins < 0) { mins += 60; hours--; }
+                if (hours < 0) { hours += 24; days--; }
+
+                if (days < 0) {
+                    // Borrow days from previous month
+                    const prevMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+                    days += prevMonth.getDate();
+                    months--;
+                }
+
+                if (months < 0) {
+                    months += 12;
+                    years--;
+                }
+
+                updateText('exact-years', years);
+                updateText('exact-months', months);
+                updateText('exact-days', days);
+                updateText('exact-hours', pad(hours));
+                updateText('exact-mins', pad(mins));
+                updateText('exact-secs', pad(secs));
+                updateText('exact-ms', pad(ms, 3));
+
+                // Next Birthday Countdown
+                let nextBday = new Date(now.getFullYear(), birthDateObj.getMonth(), birthDateObj.getDate(), birthDateObj.getHours(), birthDateObj.getMinutes());
+                if (now > nextBday) {
+                    nextBday.setFullYear(now.getFullYear() + 1);
+                }
+
+                let lastBday = new Date(nextBday.getFullYear() - 1, birthDateObj.getMonth(), birthDateObj.getDate(), birthDateObj.getHours(), birthDateObj.getMinutes());
+
+                // Progress
+                const yearTotalMs = nextBday.getTime() - lastBday.getTime();
+                const yearElapsedMs = now.getTime() - lastBday.getTime();
+                let pct = (yearElapsedMs / yearTotalMs) * 100;
+                if(pct < 0) pct = 0; if(pct > 100) pct = 100;
+
+                const fillEl = document.getElementById('year-progress-fill');
+                if(fillEl) fillEl.style.width = pct.toFixed(2) + '%';
+                updateText('year-progress-pct', pct.toFixed(1) + '%');
+
+                // Countdown Time Math
+                let cdMonths = nextBday.getMonth() - now.getMonth();
+                let cdDays = nextBday.getDate() - now.getDate();
+
+                if (cdDays < 0) {
+                    const prevM = new Date(nextBday.getFullYear(), nextBday.getMonth(), 0);
+                    cdDays += prevM.getDate();
+                    cdMonths--;
+                }
+                if (cdMonths < 0) {
+                    cdMonths += 12;
+                }
+
+                updateText('cd-months', cdMonths);
+                updateText('cd-days', cdDays);
+            }
+
+            // Loop
+            function updateLoop() {
+                calculateAgeDetails();
+                animationFrameId = requestAnimationFrame(updateLoop);
+            }
+
+            // Initialization
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                const dVal = dobDateInput.value;
+                const tVal = dobTimeInput.value || "00:00";
+
+                if (!dVal) return;
+
+                // Create Date Object
+                const dtString = `${dVal}T${tVal}:00`;
+                birthDateObj = new Date(dtString);
+
+                // Validation against future dates
+                if (birthDateObj > new Date()) {
+                    alert("Date of birth cannot be in the future.");
+                    return;
+                }
+
+                // Populate Static Info
+                const dayOfWeek = new Intl.DateTimeFormat('en-US', { weekday: 'long' }).format(birthDateObj);
+                updateText('birth-weekday', dayOfWeek);
+
+                const monthIndex = birthDateObj.getMonth();
+                const mData = monthNames[monthIndex];
+
+                updateText('month-en', mData.en);
+                updateText('month-bn', mData.bn);
+                updateText('month-ar', mData.ar);
+
+                const nextBdayDateStr = new Intl.DateTimeFormat('en-US', { month: 'long', day: 'numeric' }).format(birthDateObj);
+                updateText('next-bday-date', nextBdayDateStr);
+
+                // Show Dashboard
+                dashboard.classList.add('active');
+
+                // Start Loop
+                if (animationFrameId) {
+                    cancelAnimationFrame(animationFrameId);
+                }
+                updateLoop();
+
+                // Smooth scroll to results
+                dashboard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+
+        })();
+    </script>
+</body>
+</html>
