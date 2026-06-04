@@ -1,1057 +1,1044 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn" data-theme="light">
 <head>
+    <meta property="og:title" content="Knowlify — বাংলায় প্রযুক্তি ও প্রোগ্রামিং">
+<meta property="og:description" content="বাংলায় প্রযুক্তি, ওয়েব ডেভেলপমেন্ট ও প্রোগ্রামিং শেখার আধুনিক প্ল্যাটফর্ম।">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://knowlify-com.firebaseapp.com/">
+<meta property="og:image" content="https://knowlify-com.firebaseapp.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Knowlify — বাংলায় প্রযুক্তি ও প্রোগ্রামিং">
+<meta name="twitter:description" content="বাংলায় প্রযুক্তি, ওয়েব ডেভেলপমেন্ট ও প্রোগ্রামিং শেখার আধুনিক প্ল্যাটফর্ম।">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knowlify — বাংলায় প্রযুক্তি ও প্রোগ্রামিং</title>
+    <meta name="description" content="Knowlify — বাংলায় প্রযুক্তি, ওয়েব ডেভেলপমেন্ট ও প্রোগ্রামিং শেখার আধুনিক প্ল্যাটফর্ম।">
 
-    <title>LIFE CLOCK PRO - Track Your Life Down to the Millisecond</title>
-    <meta name="description" content="A premium, highly interactive age calculator that tracks your exact age in years, months, weeks, days, hours, minutes, seconds, and milliseconds.">
-    <meta name="keywords" content="age calculator, exact age, life clock, life tracker, countdown to birthday, life timeline">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="canonical" href="https://knowlify-com.firebaseapp.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/3135/3135810.png">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
 
-    <link rel="canonical" href="https://example.com/life-clock-pro">
-
-    <meta property="og:title" content="LIFE CLOCK PRO - Ultimate Age Calculator">
-    <meta property="og:description" content="Calculate your exact age down to the millisecond with our live dashboard.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://example.com/life-clock-pro">
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="LIFE CLOCK PRO">
-    <meta name="twitter:description" content="Track your life down to the millisecond.">
-
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; img-src 'self' data: https:;">
-
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%230a192f'/%3E%3Cpath d='M50 20 L50 50 L70 70' stroke='%23ffffff' stroke-width='8' stroke-linecap='round' fill='none'/%3E%3C/svg%3E">
     <style>
+        /* CSS Variables & Theming */
         :root {
-            /* Deep Blue Primary Theme */
-            --primary: #0a192f;
-            --primary-light: #172a45;
-            --primary-dark: #020c1b;
-            --accent: #2563eb;
-            --accent-hover: #1d4ed8;
-            --accent-gradient: linear-gradient(135deg, #2563eb, #1e40af);
-
-            /* Crisp White Surfaces */
-            --surface: #ffffff;
-            --surface-alt: #f8fafc;
-            --background: #f1f5f9;
-
-            /* Typography */
-            --text-main: #0f172a;
-            --text-muted: #64748b;
-            --text-inverse: #ffffff;
-
-            /* Shadows & Borders */
-            --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
-            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
-            --shadow-lg: 0 10px 25px -3px rgba(0,0,0,0.08), 0 4px 6px -2px rgba(0,0,0,0.04);
-            --border-radius: 12px;
-            --border-color: #e2e8f0;
-
-            /* Layout */
-            --container-max: 1280px;
-            --ad-bg: #e2e8f0;
-            --ad-text: #94a3b8;
+            --bg-color: #ffffff;
+            --text-color: #1a1a1a;
+            --text-muted: #666666;
+            --accent-blue: #0056b3; /* Royal Blue */
+            --accent-hover: #004494;
+            --card-bg: #f8f9fa;
+            --border-color: #e0e0e0;
+            --ad-bg: #f1f3f5;
+            --font-primary: 'Inter', 'Hind Siliguri', sans-serif;
+            --header-bg: rgba(255, 255, 255, 0.95);
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
         }
 
-        /* Base Reset */
-        *, *::before, *::after {
-            box-sizing: border-box;
+        [data-theme="dark"] {
+            --bg-color: #121212;
+            --text-color: #f5f5f5;
+            --text-muted: #a0a0a0;
+            --accent-blue: #3b82f6; /* Lighter blue for dark mode */
+            --accent-hover: #60a5fa;
+            --card-bg: #1e1e1e;
+            --border-color: #333333;
+            --ad-bg: #2a2a2a;
+            --header-bg: rgba(18, 18, 18, 0.95);
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Reset & Base Styles */
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* Custom Focus Ring to avoid default browser outline */
+        *:focus-visible {
+            outline: 2px solid var(--accent-blue);
+            outline-offset: 2px;
+        }
+
+        /* সব ধরণের ব্রাউজার (Chrome, Safari, Edge, Firefox) থেকে স্ক্রলবার গায়েব করার সিএসএস */
+        html {
+            scrollbar-width: none; /* Firefox-এর জন্য স্ক্রলবার হাইড */
+            -ms-overflow-style: none; /* IE এবং قدیمی Edge-এর জন্য */
+        }
+
+        html::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera এবং নতুন Edge-এর জন্য স্ক্রলবার সম্পূর্ণ গায়েব */
         }
 
         body {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--background);
-            color: var(--text-main);
+            font-family: var(--font-primary);
+            background-color: var(--bg-color);
+            color: var(--text-color);
             line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            overflow-x: hidden;
+            scrollbar-width: none; /* বডির সেফটি ব্যাকআপ */
         }
 
-        /* Typography */
-        h1, h2, h3, h4 {
-            color: var(--primary);
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 0.5em;
-        }
-
-        p {
-            margin-bottom: 1rem;
-            color: var(--text-muted);
-        }
-
-        /* Tabular numbers for counters to prevent jitter */
-        .tabular-nums {
-            font-variant-numeric: tabular-nums;
-            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-        }
-
-        /* Layout Architecture */
-        .site-wrapper {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        .header {
-            background-color: var(--primary);
-            color: var(--text-inverse);
-            padding: 1.5rem 1rem;
-            box-shadow: var(--shadow-md);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .header-content {
-            max-width: var(--container-max);
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            gap: 0.5rem;
-        }
-
-        @media (min-width: 768px) {
-            .header-content {
-                flex-direction: row;
-                justify-content: space-between;
-                text-align: left;
-            }
-        }
-
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            text-decoration: none;
-            color: var(--text-inverse);
-        }
-
-        .brand-text h1 {
-            color: var(--text-inverse);
-            font-size: 1.5rem;
-            margin: 0;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .brand-text p {
-            color: #94a3b8;
-            font-size: 0.875rem;
-            margin: 0;
-        }
-
-        .logo-container {
-            width: 48px;
-            height: 48px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* Main Grid */
-        .main-container {
-            max-width: var(--container-max);
-            margin: 0 auto;
-            padding: 2rem 1rem;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-            flex: 1;
-        }
-
-        @media (min-width: 1024px) {
-            .main-container {
-                grid-template-columns: 200px 1fr 200px;
-                padding: 2rem;
-            }
-        }
-
-        .content-area {
-            display: flex;
-            flex-direction: column;
-            gap: 2.5rem;
-            min-width: 0; /* Prevents flex overflow */
-        }
-
-        /* Ad Slots */
-        .ad-slot {
-            background-color: var(--ad-bg);
-            border: 2px dashed #cbd5e1;
-            border-radius: var(--border-radius);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--ad-text);
-            font-size: 0.875rem;
-            text-align: center;
-            padding: 1rem;
-            overflow: hidden;
-        }
-
-        .ad-banner-top { width: 100%; min-height: 90px; margin-bottom: 2rem; }
-        .ad-banner-mid { width: 100%; min-height: 250px; margin: 2rem 0; }
-        .ad-sidebar { min-height: 600px; display: none; position: sticky; top: 100px; }
-
-        @media (min-width: 1024px) {
-            .ad-sidebar { display: flex; }
-        }
-
-        /* Cards */
-        .card {
-            background-color: var(--surface);
-            border-radius: var(--border-radius);
-            padding: 2rem;
-            box-shadow: var(--shadow-lg);
-            border: 1px solid var(--border-color);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .card-header {
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-
-        /* Form Controls */
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-label {
-            display: block;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--primary);
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 0.875rem 1rem;
-            border: 2px solid var(--border-color);
-            border-radius: 8px;
-            font-size: 1rem;
-            font-family: inherit;
-            color: var(--text-main);
-            background-color: var(--surface-alt);
-            transition: border-color 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-        }
-
-        .input-row {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1rem;
-        }
-
-        @media (min-width: 640px) {
-            .input-row {
-                grid-template-columns: 2fr 1fr;
-            }
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem 2rem;
-            font-size: 1.125rem;
-            font-weight: 600;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            width: 100%;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .btn-primary {
-            background: var(--accent-gradient);
-            color: var(--text-inverse);
-            box-shadow: var(--shadow-md);
-        }
-
-        .btn-primary:hover {
-            box-shadow: var(--shadow-lg);
-            transform: translateY(-1px);
-        }
-
-        .btn-primary:active {
-            transform: translateY(1px);
-        }
-
-        /* Dashboard Results */
-        .dashboard {
+        body::-webkit-scrollbar {
             display: none;
-            animation: fadeIn 0.5s ease;
         }
-
-        .dashboard.active {
-            display: block;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Exact Age Breakdown */
-        .exact-age-display {
-            background-color: var(--primary);
-            color: var(--text-inverse);
-            padding: 2rem;
-            border-radius: var(--border-radius);
-            text-align: center;
-            margin-bottom: 2rem;
-            box-shadow: var(--shadow-lg);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .exact-age-display::before {
-            content: '';
+        .sr-only {
             position: absolute;
-            top: 0; left: 0; right: 0; height: 4px;
-            background: var(--accent-gradient);
-        }
-
-        .main-age {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 800;
-            line-height: 1;
-            margin-bottom: 0.5rem;
-            color: #ffffff;
-            display: flex;
-            justify-content: center;
-            align-items: baseline;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .main-age span.unit {
-            font-size: 1rem;
-            font-weight: 500;
-            color: #94a3b8;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-right: 0.5rem;
-        }
-
-        .sub-age-breakdown {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 1.5rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .sub-unit {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-width: 60px;
-        }
-
-        .sub-unit-val {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #e2e8f0;
-        }
-
-        .sub-unit-label {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            color: #94a3b8;
-            letter-spacing: 0.5px;
-        }
-
-        /* Totals Grid */
-        .totals-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .total-card {
-            background: var(--surface-alt);
-            padding: 1.5rem 1rem;
-            border-radius: 8px;
-            text-align: center;
-            border: 1px solid var(--border-color);
-        }
-
-        .total-val {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 0.25rem;
-            word-break: break-all;
-        }
-
-        .total-label {
-            font-size: 0.875rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        /* Info Cards */
-        .info-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        @media (min-width: 768px) {
-            .info-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        .info-card {
-            background: var(--surface);
-            padding: 1.5rem;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .info-card h4 {
-            font-size: 0.875rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--text-muted);
-            margin-bottom: 1rem;
-        }
-
-        .lang-list {
-            list-style: none;
-        }
-
-        .lang-list li {
-            display: flex;
-            justify-content: space-between;
-            padding: 0.5rem 0;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .lang-list li:last-child {
-            border-bottom: none;
-        }
-
-        .lang-label {
-            font-weight: 600;
-            color: var(--primary);
-        }
-
-        .lang-val {
-            color: var(--text-main);
-            font-size: 1.125rem;
-        }
-
-        /* Next Birthday Countdown */
-        .countdown-container {
-            text-align: center;
-            padding: 1.5rem;
-            background: var(--surface-alt);
-            border-radius: 8px;
-            border: 1px solid var(--accent);
-        }
-
-        .countdown-title {
-            color: var(--accent);
-            font-size: 1.125rem;
-            margin-bottom: 1rem;
-        }
-
-        .countdown-timer {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-        }
-
-        /* Timeline */
-        .timeline-container {
-            margin-top: 2rem;
-            padding: 1.5rem;
-            background: var(--surface-alt);
-            border-radius: 8px;
-        }
-
-        .progress-label {
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.875rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .progress-bar-bg {
-            width: 100%;
-            height: 12px;
-            background: #e2e8f0;
-            border-radius: 6px;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
             overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
         }
 
-        .progress-bar-fill {
-            height: 100%;
-            background: var(--accent-gradient);
-            width: 0%;
-            transition: width 1s ease-out;
-        }
-
-        /* Typography Content Sections */
-        .content-section {
-            background: var(--surface);
-            padding: 2.5rem;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow-md);
-        }
-
-        .content-section h2 {
-            font-size: 1.75rem;
-            margin-bottom: 1.5rem;
-            border-bottom: 2px solid var(--surface-alt);
-            padding-bottom: 0.5rem;
-        }
-
-        .faq-item {
-            margin-bottom: 1.5rem;
-        }
-
-        .faq-item h3 {
-            font-size: 1.125rem;
-            color: var(--primary-light);
-            margin-bottom: 0.5rem;
-        }
-
-        .security-note {
-            background-color: #f0fdf4;
-            border-left: 4px solid #16a34a;
-            padding: 1.5rem;
-            border-radius: 4px;
-        }
-
-        .security-note h3 {
-            color: #166534;
-            margin-bottom: 0.5rem;
-            font-size: 1.125rem;
-        }
-
-        .security-note p {
-            color: #15803d;
-            margin: 0;
-        }
-
-        /* Footer */
-        .footer {
-            background-color: var(--primary-dark);
-            color: #94a3b8;
-            padding: 3rem 1rem;
-            text-align: center;
-            margin-top: auto;
-        }
-
-        .footer-content {
-            max-width: var(--container-max);
-            margin: 0 auto;
-        }
-
-        .footer-links {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            color: #cbd5e1;
+        a {
+            color: var(--accent-blue);
             text-decoration: none;
             transition: color 0.2s ease;
         }
 
-        .footer-links a:hover {
-            color: var(--surface);
+        a:hover {
+            color: var(--accent-hover);
         }
 
-        .footer p {
-            font-size: 0.875rem;
+        /* Typography using clamp() */
+        h1 { font-size: clamp(1.5rem, 4vw, 2.5rem); font-weight: 700; }
+        h2 { font-size: clamp(1.25rem, 3vw, 2rem); font-weight: 600; margin-bottom: 1rem; }
+        p { font-size: clamp(1rem, 1.5vw, 1.125rem); margin-bottom: 1rem; }
+
+        /* Header & Navigation */
+        header {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+            background-color: var(--header-bg);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-blue);
+        }
+
+        .controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        button {
+            background-color: var(--accent-blue);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.1s ease;
+        }
+
+        button:hover { background-color: var(--accent-hover); }
+        button:active { transform: scale(0.98); }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--accent-blue);
+            border: 2px solid var(--accent-blue);
+        }
+        .btn-outline:hover {
+            background-color: var(--accent-blue);
+            color: white;
+        }
+
+        /* Layout (CSS Grid Expanded for Maximized Readability & Ad Placement) */
+        .container {
+    width: 100%;
+    max-width: 1600px;
+    margin: 70px auto 0 auto;
+            padding: 2rem 2%;
+            display: grid;
+            grid-template-columns: 300px 1fr 300px; /* দুই পাশের বিজ্ঞাপন স্লটের জন্য সমান ও বড় ৩00px স্পেস */
+            gap: 2.5rem;
+        }
+
+        /* Advertisement Slots */
+        .ad-slot {
+            background-color: var(--ad-bg);
+            border: 1px dashed var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            text-align: center;
+            border-radius: 8px;
+            padding: 1rem;
+            min-height: 100px;
+        }
+
+        /* প্রফেশনাল বিজ্ঞাপনের জন্য স্লটের সাইজ বৃদ্ধি ও অপ্টিমাইজেশন */
+        .ad-skyscraper {
+            width: 300px;
+            height: 600px; /* আন্তর্জাতিক স্ট্যান্ডার্ড হাফ-পেজ অ্যাড সাইজ */
+            position: sticky;
+            top: 100px;
+        }
+        .ad-banner {
+            width: 100%;
+            min-height: 250px; /* লার্জ লিডারবোর্ড ৯৭০x২৫০ সাইজ, যা সর্বোচ্চ ডলার ইনকাম নিশ্চিত করে */
+            margin-bottom: 2rem;
+        }
+
+        /* Main Content with Fixed Top Banner Grid & Enhanced Typography */
+        .content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        /* টপ ব্যানারকে সবসময় কলামের প্রথমে রাখার জন্য সিএসএস রুল */
+        .ad-banner {
+            order: -1 !important;
+        }
+        .content h2 {
+            font-size: clamp(1.4rem, 2.5vw, 2.2rem) !important;
+            line-height: 1.4;
+            margin-bottom: 1rem;
+        }
+        .content p {
+            font-size: clamp(1.05rem, 1.6vw, 1.2rem) !important;
+            line-height: 1.7;
+        }
+
+        /* Article Cards (Spacing & Hover Animation Depth Fixed) */
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 2rem; /* লুপ কন্টেইনারের ভেতর কার্ডগুলোর মধ্যকার নিখুঁত দূরত্ব */
+            position: relative;
+            z-index: 1;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 20px -5px rgba(0, 0, 0, 0.15);
+            z-index: 2; /* অ্যানিমেশনের সময় কার্ডটি যাতে পেছনের কার্ডের ওপরে ভেসে ওঠে */
+        }
+
+        .card-img-wrapper {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .card-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .card:hover .card-img-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .card-body { padding: 1.5rem; word-break: break-word; overflow-wrap: break-word; }
+        .card-meta { color: var(--text-muted); font-size: 0.875rem; margin-bottom: 0.5rem; }
+
+        /* Right Sidebar */
+        .right-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .widget {
+            background-color: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .widget ul { list-style: none; }
+        .widget ul li { margin-bottom: 0.75rem; }
+        .widget ul li a { color: var(--text-color); }
+        .widget ul li a:hover { color: var(--accent-blue); }
+
+        /* Footer */
+        footer {
+            background-color: var(--card-bg);
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 5%;
+            margin-top: 4rem;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Responsive Design & Mobile Anchor Ad Smart Routing (No Layout Breaking) */
+        @media (max-width: 1024px) {
+            .container { grid-template-columns: 1fr 300px; gap: 1.5rem; }
+            .left-sidebar { display: none; }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+                padding: 1rem 4%;
+            }
+            .right-sidebar { grid-row: 3; }
+
+            /* মোবাইল ডিভাইসে টপ ব্যানার ফিক্সড রাখার মেকানিজম */
+            .ad-banner {
+                position: sticky;
+                top: 70px;
+                z-index: 999;
+                background-color: var(--card-bg);
+                box-shadow: var(--shadow);
+                margin-bottom: 1.5rem;
+            }
+
+            /* ইন-আর্টিকেল অ্যাডগুলোকে মোবাইলের স্ক্রিন রেশিও অনুযায়ী ফিট করা */
+            .ad-slot {
+                min-height: 80px !important;
+                font-size: 0.85rem;
+            }
+        }
+
+        /* --- ডেস্কটপ ও ল্যাপটপে প্রিমিয়াম ফ্লুইড ১-লাইন বিন্যাস লক রাখার সিএসএস --- */
+        header {
+            padding: 0.5rem 5% !important; /* হেডার বার চিকন করার জন্য প্যাডিং কমানো হলো */
+        }
+        .blog-custom-header {
+            display: flex !important;
+            flex-direction: row !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            gap: 1.5rem !important;
+        }
+        .header-top-row {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+            flex-grow: 1 !important;
+        }
+        .header-nav-actions {
+            display: flex !important;
+            gap: 1.25rem !important;
+            align-items: center !important;
+            margin-left: auto !important; /* হোম এবং ক্যাটাগরি একদম ডান পাশে সরিয়ে নেওয়ার জন্য */
+            padding-right: 1rem;
+        }
+        /* বাটনগুলোর চারপাশের নীল বক্স বা বর্ডার রিমুভ এবং ফন্ট সাইজ ১০০% সমান করার সিএসএস */
+        .btn-outline.nav-home-btn, .category-custom-btn, #langToggle, #themeToggle {
+            border: none !important;
+            background: transparent !important;
+            color: var(--text-color) !important;
+            padding: 0.4rem 0.5rem !important; /* মোবাইলের জন্য প্যাডিং আরো নিখুঁত করা হলো */
+            font-size: 0.95rem !important;
+            font-weight: 600 !important;
+            font-family: var(--font-primary) !important;
+            cursor: pointer !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            gap: 4px !important;
+            line-height: 1 !important;
+            transition: color 0.3s, background 0.3s;
+            flex-shrink: 0 !important; /* ভাষা পরিবর্তনের সময় যেন বাটন ছোট হয়ে ভেঙে না যায় */
+        }
+        .btn-outline.nav-home-btn:hover, .category-custom-btn:hover, #langToggle:hover, #themeToggle:hover {
+            color: var(--accent-blue) !important;
+            background: transparent !important;
+        }
+        /* কাস্টম অ্যানিমেটেড ড্রপডাউন কন্টেইনার */
+        .category-select-container {
+            position: relative;
+            display: inline-block;
+            flex-shrink: 0 !important;
+        }
+        .category-custom-btn i {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+        /* ড্রপডাউন লিস্টের স্মুথ অ্যানিমেশন সিএসএস */
+        .custom-dropdown-menu {
+            position: absolute;
+            top: 110%;
+            left: 0;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            min-width: 160px;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+            overflow: hidden;
+            padding: 0.4rem 0;
+        }
+        .custom-dropdown-menu.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .custom-dropdown-item {
+            width: 100%;
+            padding: 0.6rem 1.2rem;
+            text-align: left;
+            background: transparent;
+            border: none;
+            color: var(--text-color);
+            font-family: inherit;
+            font-size: 0.95rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+            display: block;
+        }
+        .custom-dropdown-item:hover {
+            background: rgba(0, 86, 179, 0.08);
+            color: var(--accent-blue);
+        }
+
+        #themeToggle {
+            background: transparent !important;
+            color: var(--text-color) !important;
+            font-size: 1.1rem !important;
+        }
+        .header-bottom-row {
+            position: relative !important;
+            display: flex !important;
+            align-items: center !important;
+            max-width: 260px !important;
+            width: 100% !important;
+        }
+        .header-bottom-row input {
+            padding: 0.5rem 1rem !important;
+            padding-right: 2.5rem !important;
+            border-radius: 30px !important; /* উভয় ডিভাইসের জন্য প্রিমিয়াম রাউন্ডেড কোণ */
+            border: 1px solid var(--border-color) !important;
+            background: var(--card-bg) !important;
+            color: var(--text-color) !important;
+            font-size: 0.9rem !important;
+            width: 100% !important;
+            font-family: inherit !important;
+            transition: all 0.3s ease !important;
+        }
+        /* ক্লিক বা ফোকাস করলে সলিড নীল স্ট্রোক থাকবে না, শুধু হালকা প্রিমিয়াম শ্যাডো থাকবে */
+        .header-bottom-row input:focus {
+            outline: none !important;
+            border-color: var(--border-color) !important; /* নীল স্ট্রোক বা বর্ডার রিমুভ */
+            box-shadow: 0 4px 15px rgba(0, 86, 179, 0.15) !important; /* হালকা নীল গ্লো শ্যাডো */
+        }
+        .search-icon-marker {
+            position: absolute !important;
+            left: 15px !important; /* আইকনকে একদম বাম পাশে গুগলের মতো সেট করা হলো */
+            color: var(--text-muted) !important;
+            pointer-events: none !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            z-index: 2 !important;
+        }
+        /* সার্চ বক্সের ভেতরের টেক্সট প্যাডিং বাম পাশে বাড়িয়ে দেওয়া হলো যাতে আইকনের ওপর লেখা না চলে আসে */
+        .header-bottom-row input {
+            padding: 0.5rem 1rem !important;
+            padding-left: 2.6rem !important; /* বাম পাশের আইকনের জন্য পারফেক্ট সেফ গ্যাপ */
+            border-radius: 30px !important;
+            border: 1px solid var(--border-color) !important;
+            background: var(--card-bg) !important;
+            color: var(--text-color) !important;
+            font-size: 0.9rem !important;
+            width: 100% !important;
+            font-family: inherit !important;
+            transition: all 0.3s ease !important;
+        }
+
+       /* --- শুধুমাত্র মোবাইল এবং ট্যাব স্ক্রিনের জন্য আল্ট্রা-ফিট স্লিম রেসপনসিভ মেকানিজম --- */
+        @media (max-width: 768px) {
+    header {
+        padding: 0.4rem 4% !important;
+        position: fixed !important;
+        left: 0 !important;
+        width: 100% !important;
+                top: 0 !important;
+                z-index: 1010 !important;
+                height: 48px !important; /* মোড পরিবর্তন ও লোডিং ফ্রেশ রাখার জন্য ফিক্সড স্লিম হাইট */
+                overflow: visible !important;
+            }
+            .blog-custom-header {
+                display: flex !important;
+                flex-direction: row !important; /* ১-লাইনে আল্ট্রা স্লিম লেআউট */
+                justify-content: space-between !important;
+                align-items: center !important;
+                gap: 0.5rem !important;
+                width: 100% !important;
+                position: relative !important;
+            }
+            .header-top-row {
+                width: 100% !important;
+                display: flex !important;
+                justify-content: space-between !important;
+                align-items: center !important;
+            }
+            .logo {
+                font-size: 1.25rem !important;
+                flex-shrink: 0 !important;
+            }
+            .header-nav-actions {
+                display: flex !important;
+                align-items: center !important;
+                justify-content: flex-end !important;
+                gap: 0.15rem !important;
+                flex-wrap: nowrap !important;
+                padding-right: 0 !important;
+                margin-right: -4px !important;
+            }
+            .btn-outline.nav-home-btn, .category-custom-btn, #langToggle, #themeToggle, .mobile-search-trigger {
+                padding: 0.3rem 0.35rem !important;
+                font-size: 0.82rem !important;
+                height: 32px !important;
+            }
+            .controls {
+                display: flex !important;
+                align-items: center !important;
+                gap: 0.15rem !important;
+            }
+
+            /* মোবাইল অ্যানিমেটেড কাস্টম সার্চ বক্স পজিশনিং */
+            .header-bottom-row {
+                position: absolute !important;
+                top: 45px !important; /* হেডারের ঠিক নিচ থেকে ড্রপডাউন স্লাইড হবে */
+                left: 0 !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                padding: 0.4rem 4% !important;
+                background-color: var(--header-bg) !important;
+                backdrop-filter: blur(10px) !important;
+                border-bottom: 1px solid var(--border-color) !important;
+                margin-top: 0 !important;
+
+                /* পিওর প্রিমিয়াম স্লাইড ও ফেড অ্যানিমেশন সিএসএস */
+                opacity: 0 !important;
+                visibility: hidden !important;
+                transform: translateY(-15px) !important;
+                transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease !important;
+                z-index: 999 !important;
+            }
+
+            /* সার্চ বক্স ওপেন হলে এই ক্লাসটি অ্যাক্টিভ হবে */
+            .header-bottom-row.active {
+                opacity: 1 !important;
+                visibility: visible !important;
+                transform: translateY(0) !important;
+            }
+
+            .header-bottom-row input {
+                padding: 0.4rem 1rem !important;
+                padding-left: 2.3rem !important;
+                font-size: 0.88rem !important;
+                border-radius: 30px !important;
+                width: 100% !important;
+            }
+            .search-icon-marker {
+                left: calc(4% + 12px) !important;
+                top: 50% !important;
+                transform: translateY(-50%) !important;
+            }
+            .search-icon-marker svg {
+                width: 14px !important;
+                height: 14px !important;
+            }
+
+            /* ডেস্কটপে ট্রিগার বাটনটি হাইড থাকবে */
+            .mobile-search-trigger {
+                display: inline-flex !important;
+                background: transparent !important;
+                border: none !important;
+                color: var(--text-color) !important;
+                cursor: pointer !important;
+                align-items: center !important;
+                justify-content: center !important;
+                font-size: 1rem !important;
+            }
+
+            /* প্রিমিয়াম অ্যাড ব্যানার ফিক্সড পজিশন (যেহেতু হেডার এখন ছোট, তাই ৪8px নিচে ফিক্সড থাকবে) */
+            .ad-banner {
+                position: sticky !important;
+                top: 48px !important;
+                z-index: 1000 !important;
+                background-color: var(--card-bg) !important;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.05) !important;
+                margin-top: 0 !important;
+                margin-bottom: 1rem !important;
+                width: 100% !important;
+                min-height: 50px !important;
+                max-height: 100px !important;
+                overflow: hidden !important;
+            }
+        }
+
+        /* ল্যাপটপ বা কম্পিউটারে এই ট্রিপল ট্রিগার বাটনটি হাইড রাখার রুল */
+        @media (min-width: 769px) {
+            .mobile-search-trigger {
+                display: none !important;
+            }
         }
     </style>
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "LIFE CLOCK PRO",
-      "description": "Premium age calculator to track your life down to the millisecond.",
-      "applicationCategory": "UtilitiesApplication",
-      "operatingSystem": "All",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      }
-    }
-    </script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Knowlify",
+  "url": "https://knowlify-com.firebaseapp.com/",
+  "description": "বাংলায় প্রযুক্তি ও প্রোগ্রামিং শেখার আধুনিক প্ল্যাটফর্ম",
+  "inLanguage": "bn"
+}
+</script>
 </head>
 <body>
-
-    <div class="site-wrapper">
-        <header class="header">
-            <div class="header-content">
-                <a href="#" class="brand" aria-label="Life Clock Pro Home">
-                    <div class="logo-container">
-                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='none' stroke='%23ffffff' stroke-width='4'/%3E%3Cpath d='M50 20 L50 50 L70 70' stroke='%23ffffff' stroke-width='6' stroke-linecap='round' fill='none'/%3E%3C/svg%3E" alt="Life Clock Pro Logo" style="width: 100%; height: 100%; object-fit: contain;">
-                        </div>
-                    <div class="brand-text">
-                        <h1>Life Clock Pro</h1>
-                        <p>Track Your Life Down to the Millisecond</p>
-                    </div>
-                </a>
+<header class="blog-custom-header">
+        <div class="header-top-row">
+            <div class="logo" style="cursor: pointer; font-family: inherit; display: inline-flex; align-items: center; gap: 8px;" onclick="window.filterCategory('all'); window.scrollTo({top: 0, behavior: 'smooth'});">
+                <span style="font-weight: 700;">Knowlify</span>
             </div>
-        </header>
 
-        <div class="main-container">
+            <div class="header-nav-actions">
+                <button onclick="window.filterCategory('all'); setTimeout(() => { window.scrollTo({top: 0, behavior: 'smooth'}); }, 50);" class="btn-outline nav-home-btn">
+                    <span class="lang-text" data-bn="হোম" data-en="Home">হোম</span>
+                </button>
 
-            <aside class="ad-sidebar">
-                <div class="ad-slot" style="width: 100%; height: 100%;">
-                    Left Sidebar Ad Area<br>(Placeholder)
-                </div>
-            </aside>
-
-            <main class="content-area">
-
-                <div class="ad-banner-top">
-                    <div class="ad-slot" style="width: 100%; height: 100%;">
-                        Top Banner Ad Area (Placeholder)
+                <div class="category-select-container">
+                    <button class="category-custom-btn" id="dropdownBtn" onclick="window.toggleCategoryDropdown(event)">
+                        <span class="lang-text" data-bn="ক্যাটাগরি" data-en="Category">ক্যাটাগরি</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="custom-dropdown-menu" id="customDropdown">
+                        <button class="custom-dropdown-item lang-text" data-bn="সব ক্যাটাগরি" data-en="All Categories" onclick="window.selectCategory('all')">সব ক্যাটাগরি</button>
+                        <button class="custom-dropdown-item lang-text" data-bn="টেকনোলজি" data-en="Technology" onclick="window.selectCategory('Technology')">টেকনোলজি</button>
+                        <button class="custom-dropdown-item lang-text" data-bn="প্রোগ্রামিং" data-en="Programming" onclick="window.selectCategory('Programming')">প্রোগ্রামিং</button>
+                        <button class="custom-dropdown-item lang-text" data-bn="ডিজাইন" data-en="Design" onclick="window.selectCategory('Design')">ডিজাইন</button>
                     </div>
                 </div>
 
-                <section class="card" aria-labelledby="calc-heading">
-                    <div class="card-header">
-                        <h2 id="calc-heading">Enter Your Birth Details</h2>
-                        <p>Discover your exact age and life timeline instantly.</p>
-                    </div>
-                    <form id="age-form" novalidate>
-                        <div class="input-row">
-                            <div class="form-group">
-                                <label for="dob-date" class="form-label">Date of Birth *</label>
-                                <input type="date" id="dob-date" class="form-control" required aria-required="true">
-                            </div>
-                            <div class="form-group">
-                                <label for="dob-time" class="form-label">Time of Birth (Optional)</label>
-                                <input type="time" id="dob-time" class="form-control" value="00:00">
-                            </div>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Calculate Life Clock</button>
-                    </form>
-                </section>
-
-                <section id="results-dashboard" class="dashboard" aria-live="polite">
-
-                    <div class="exact-age-display">
-                        <div class="main-age tabular-nums">
-                            <span id="exact-years">0</span><span class="unit">Years</span>
-                            <span id="exact-months">0</span><span class="unit">Months</span>
-                            <span id="exact-days">0</span><span class="unit">Days</span>
-                        </div>
-                        <div class="sub-age-breakdown tabular-nums">
-                            <div class="sub-unit">
-                                <span id="exact-hours" class="sub-unit-val">00</span>
-                                <span class="sub-unit-label">Hours</span>
-                            </div>
-                            <div class="sub-unit" style="font-size: 1.5rem; color:#e2e8f0; font-weight:700;">:</div>
-                            <div class="sub-unit">
-                                <span id="exact-mins" class="sub-unit-val">00</span>
-                                <span class="sub-unit-label">Minutes</span>
-                            </div>
-                            <div class="sub-unit" style="font-size: 1.5rem; color:#e2e8f0; font-weight:700;">:</div>
-                            <div class="sub-unit">
-                                <span id="exact-secs" class="sub-unit-val">00</span>
-                                <span class="sub-unit-label">Seconds</span>
-                            </div>
-                            <div class="sub-unit" style="font-size: 1.5rem; color:#e2e8f0; font-weight:700;">.</div>
-                            <div class="sub-unit">
-                                <span id="exact-ms" class="sub-unit-val" style="color: var(--accent); min-width: 45px; text-align: left;">000</span>
-                                <span class="sub-unit-label">MS</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <h3 style="margin-bottom: 1rem; text-align: center;">Total Elapsed Time</h3>
-                    <div class="totals-grid tabular-nums">
-                        <div class="total-card">
-                            <div id="tot-months" class="total-val">0</div>
-                            <div class="total-label">Months</div>
-                        </div>
-                        <div class="total-card">
-                            <div id="tot-weeks" class="total-val">0</div>
-                            <div class="total-label">Weeks</div>
-                        </div>
-                        <div class="total-card">
-                            <div id="tot-days" class="total-val">0</div>
-                            <div class="total-label">Days</div>
-                        </div>
-                        <div class="total-card">
-                            <div id="tot-hours" class="total-val">0</div>
-                            <div class="total-label">Hours</div>
-                        </div>
-                        <div class="total-card">
-                            <div id="tot-mins" class="total-val">0</div>
-                            <div class="total-label">Minutes</div>
-                        </div>
-                        <div class="total-card">
-                            <div id="tot-secs" class="total-val">0</div>
-                            <div class="total-label">Seconds</div>
-                        </div>
-                    </div>
-
-                    <div class="info-grid">
-                        <div class="info-card">
-                            <h4>Birth Information</h4>
-                            <ul class="lang-list">
-                                <li>
-                                    <span class="lang-label">Day of Week:</span>
-                                    <span id="birth-weekday" class="lang-val">-</span>
-                                </li>
-                                <li>
-                                    <span class="lang-label">Month (English):</span>
-                                    <span id="month-en" class="lang-val">-</span>
-                                </li>
-                                <li>
-                                    <span class="lang-label">Month (Bengali):</span>
-                                    <span id="month-bn" class="lang-val" style="font-family: sans-serif;">-</span>
-                                </li>
-                                <li>
-                                    <span class="lang-label">Month (Arabic):</span>
-                                    <span id="month-ar" class="lang-val" style="font-family: sans-serif;">-</span>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="info-card">
-                            <h4>Next Birthday</h4>
-                            <div class="countdown-container">
-                                <div class="countdown-title" id="next-bday-date">Upcoming</div>
-                                <div class="countdown-timer tabular-nums">
-                                    <div class="sub-unit">
-                                        <span id="cd-months" class="sub-unit-val" style="color:var(--primary)">0</span>
-                                        <span class="sub-unit-label">Months</span>
-                                    </div>
-                                    <div class="sub-unit">
-                                        <span id="cd-days" class="sub-unit-val" style="color:var(--primary)">0</span>
-                                        <span class="sub-unit-label">Days</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="timeline-container">
-                                <div class="progress-label">
-                                    <span>Current Year Progress</span>
-                                    <span id="year-progress-pct">0%</span>
-                                </div>
-                                <div class="progress-bar-bg">
-                                    <div id="year-progress-fill" class="progress-bar-fill"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </section>
-
-                <div class="ad-banner-mid">
-                    <div class="ad-slot" style="width: 100%; height: 100%;">
-                        Mid-Content Ad Area (Placeholder)
-                    </div>
+                <div class="controls">
+                    <button id="langToggle" class="btn-outline" title="Change Language" aria-label="Toggle Language"><i class="fa-solid fa-globe" aria-hidden="true" style="font-size: 1.1rem;"></i></button>
+                    <button class="mobile-search-trigger" onclick="toggleMobileSearch(event)" title="Search" aria-label="Open Search"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></button>
+                    <button id="themeToggle" title="Toggle Theme" aria-label="Toggle Dark Mode" style="display: inline-flex; align-items: center; justify-content: center; background: transparent; border: none; cursor: pointer; color: var(--text-color); font-size: 1.1rem;"><i class="fa-solid fa-moon" aria-hidden="true"></i></button>
                 </div>
-
-                <section class="content-section">
-                    <h2>About Life Clock Pro</h2>
-                    <p>Life Clock Pro is a premium, high-precision utility designed to provide a comprehensive breakdown of your age. Utilizing advanced calendar mathematics, the tool accounts for leap years, varying month lengths, and local timezone nuances to ensure absolute accuracy.</p>
-                    <p>Unlike standard age calculators, Life Clock Pro renders your timeline continuously. The live dashboard tracks milliseconds in real-time securely within your browser, ensuring no data is transmitted or stored externally.</p>
-                </section>
-
-                <section class="content-section">
-                    <h2>Frequently Asked Questions</h2>
-                    <div class="faq-item">
-                        <h3>How accurate is the millisecond counter?</h3>
-                        <p>Extremely accurate. It uses your device's internal high-resolution clock and JavaScript's native Date object, recalculating the exact time differential up to 60 times per second for smooth visual rendering.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h3>Does it account for leap years?</h3>
-                        <p>Yes. The underlying calendar logic automatically processes leap years when calculating total days and exact breakdown matrices, ensuring year boundaries are respected perfectly.</p>
-                    </div>
-                    <div class="faq-item">
-                        <h3>Is my birth date data saved anywhere?</h3>
-                        <p>No. All calculations are performed entirely client-side in your web browser. No data is sent to our servers, maintaining complete privacy.</p>
-                    </div>
-                </section>
-
-                <section class="security-note">
-                    <h3>Security & Privacy Guaranteed</h3>
-                    <p>This application operates under strict security principles. No user inputs are stored, cookies are not used for tracking your personal date, and DOM rendering uses safe text insertion methods to prevent Cross-Site Scripting (XSS). Your personal timeline remains yours alone.</p>
-                </section>
-
-                <div class="ad-banner-top" style="margin-top: 2rem;">
-                    <div class="ad-slot" style="width: 100%; height: 100%;">
-                        Bottom Content Ad Area (Placeholder)
-                    </div>
-                </div>
-
-            </main>
-
-            <aside class="ad-sidebar">
-                <div class="ad-slot" style="width: 100%; height: 100%;">
-                    Right Sidebar Ad Area<br>(Placeholder)
-                </div>
-            </aside>
-
+            </div>
         </div>
 
-        <footer class="footer">
-            <div class="footer-content">
-                <div class="ad-banner-top" style="max-width: 728px; margin: 0 auto 2rem auto; min-height: 90px;">
-                    <div class="ad-slot" style="width: 100%; height: 100%; border-color: #475569; background: #1e293b;">
-                        Footer Ad Area (Placeholder)
-                    </div>
-                </div>
+        <div class="header-bottom-row">
+            <span class="search-icon-marker">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" style="display: block; opacity: 0.7;">
+                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                </svg>
+            </span>
+            <input type="text" id="searchInput" oninput="window.liveSearch(this.value)" placeholder="খুঁজুন (Search)...">
+        </div>
+    </header>
 
-                <ul class="footer-links">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                </ul>
-                <p>&copy; <span id="current-year"></span> Life Clock Pro. All rights reserved.</p>
+    <main class="container">
+
+        <aside class="left-sidebar">
+            <div class="ad-slot ad-skyscraper" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                <ins class="adsbygoogle"
+     style="display:block;width:300px;height:600px"
+     data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+     data-ad-slot="1111111111"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
             </div>
-        </footer>
-    </div>
+        </aside>
+
+        <section class="content" style="display: flex; flex-direction: column;">
+<h1 class="sr-only">Knowlify — বাংলায় প্রযুক্তি ও প্রোগ্রামিং ব্লগ</h1>
+            <div id="topPremiumBanner" class="ad-slot ad-banner" style="display: flex; flex-direction: column; justify-content: center; align-items: center; order: 1 !important;">
+                <ins class="adsbygoogle"
+     style="display:block;width:100%;min-height:50px;max-height:100px"
+     data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+     data-ad-slot="2222222222"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+
+            <div id="articlesContainer" style="order: 2 !important;"></div>
+
+            <div class="ad-slot" style="min-height: 250px; order: 3 !important;">
+                <span class="lang-text" data-bn="ইন-আর্টিকেল অ্যাডসেন্স" data-en="In-Article AdSense">ইন-আর্টিকেল অ্যাডসেন্স</span>
+            </div>
+
+        </section>
+
+        <aside class="right-sidebar">
+            <div class="ad-slot ad-skyscraper" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                <ins class="adsbygoogle"
+     style="display:block;width:300px;height:600px"
+     data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+     data-ad-slot="1111111111"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+        </aside>
+
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="about.html" class="lang-text" data-bn="আমাদের সম্পর্কে" data-en="About Us">আমাদের সম্পর্কে</a>
+            <a href="contact.html" class="lang-text" data-bn="যোগাযোগ" data-en="Contact Us">যোগাযোগ</a>
+            <a href="privacy.html" class="lang-text" data-bn="প্রাইভেসি পলিসি" data-en="Privacy Policy">প্রাইভেসি পলিসি</a>
+            <a href="terms.html" class="lang-text" data-bn="শর্তাবলী" data-en="Terms of Service">শর্তাবলী</a>
+        </div>
+        <p class="lang-text" data-bn="© ২০২৬ Knowlify. সর্বস্বত্ব সংরক্ষিত।" data-en="© 2026 Knowlify. All rights reserved.">© ২০২৬ Knowlify. সর্বস্বত্ব সংরক্ষিত।</p>
+    </footer>
 
     <script>
-        (function() {
-            'use strict';
+        document.addEventListener('DOMContentLoaded', () => {
 
-            // Constants for localization
-            const monthNames = [
-                { en: "January", bn: "জানুয়ারি", ar: "يناير" },
-                { en: "February", bn: "ফেব্রুয়ারি", ar: "فبراير" },
-                { en: "March", bn: "মার্চ", ar: "مارس" },
-                { en: "April", bn: "এপ্রিল", ar: "أبريل" },
-                { en: "May", bn: "মে", ar: "مايو" },
-                { en: "June", bn: "জুন", ar: "يونيو" },
-                { en: "July", bn: "জুলাই", ar: "يوليو" },
-                { en: "August", bn: "আগস্ট", ar: "أغسطس" },
-                { en: "September", bn: "সেপ্টেম্বর", ar: "سبتمبر" },
-                { en: "October", bn: "অক্টোবর", ar: "أكتوبر" },
-                { en: "November", bn: "নভেম্বর", ar: "نوفمبر" },
-                { en: "December", bn: "ডিসেম্বর", ar: "ديسمبر" }
-            ];
+            // --- XSS Sanitization Helper ---
+            // A basic utility to escape HTML inputs if you render dynamic data
+            window.sanitizeHTML = (str) => {
+                const temp = document.createElement('div');
+                temp.textContent = str;
+                return temp.innerHTML;
+            };
 
-            const MS_PER_SEC = 1000;
-            const MS_PER_MIN = 60 * MS_PER_SEC;
-            const MS_PER_HOUR = 60 * MS_PER_MIN;
-            const MS_PER_DAY = 24 * MS_PER_HOUR;
-            const MS_PER_WEEK = 7 * MS_PER_DAY;
+            // --- Theme Management (Dark/Light) ---
+            const themeToggleBtn = document.getElementById('themeToggle');
+            const htmlTag = document.documentElement;
 
-            // DOM Elements
-            const form = document.getElementById('age-form');
-            const dobDateInput = document.getElementById('dob-date');
-            const dobTimeInput = document.getElementById('dob-time');
-            const dashboard = document.getElementById('results-dashboard');
+            // Check local storage or system preference
+            const savedTheme = localStorage.getItem('theme');
+            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-            // Set max date to today to prevent future births
-            const todayStr = new Date().toISOString().split('T')[0];
-            dobDateInput.setAttribute('max', todayStr);
-            document.getElementById('current-year').textContent = new Date().getFullYear();
+            let currentTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
 
-            let birthDateObj = null;
-            let animationFrameId = null;
+            const updateThemeUI = () => {
+                htmlTag.setAttribute('data-theme', currentTheme);
+                // ক্লিক করার পর রিয়েল ভেক্টর আইকন লোড হবে যা একদম মিডলে অ্যালাইন থাকবে
+                themeToggleBtn.innerHTML = currentTheme === 'dark' ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
+            };
 
-            // Utility: Secure Text Updates
-            function updateText(id, text) {
-                const el = document.getElementById(id);
-                if (el) el.textContent = text;
-            }
+            // Initialize Theme
+            updateThemeUI();
 
-            // Utility: Pad numbers
-            function pad(num, size = 2) {
-                let s = num.toString();
-                while (s.length < size) s = "0" + s;
-                return s;
-            }
-
-            // Core Math
-            function calculateAgeDetails() {
-                if (!birthDateObj) return;
-
-                const now = new Date();
-                if (now < birthDateObj) return; // Prevent negative time if clock changes
-
-                const diffTotalMs = now.getTime() - birthDateObj.getTime();
-
-                // Totals
-                const totalDays = Math.floor(diffTotalMs / MS_PER_DAY);
-                const totalWeeks = Math.floor(diffTotalMs / MS_PER_WEEK);
-                const totalHours = Math.floor(diffTotalMs / MS_PER_HOUR);
-                const totalMins = Math.floor(diffTotalMs / MS_PER_MIN);
-                const totalSecs = Math.floor(diffTotalMs / MS_PER_SEC);
-
-                // For exact months/years total, approximate by average month length or calculate exactly
-                let monthsTotal = (now.getFullYear() - birthDateObj.getFullYear()) * 12 + (now.getMonth() - birthDateObj.getMonth());
-                if (now.getDate() < birthDateObj.getDate()) {
-                    monthsTotal--;
-                }
-
-                updateText('tot-months', monthsTotal.toLocaleString());
-                updateText('tot-weeks', totalWeeks.toLocaleString());
-                updateText('tot-days', totalDays.toLocaleString());
-                updateText('tot-hours', totalHours.toLocaleString());
-                updateText('tot-mins', totalMins.toLocaleString());
-                updateText('tot-secs', totalSecs.toLocaleString());
-
-                // Exact Breakdown
-                let years = now.getFullYear() - birthDateObj.getFullYear();
-                let months = now.getMonth() - birthDateObj.getMonth();
-                let days = now.getDate() - birthDateObj.getDate();
-                let hours = now.getHours() - birthDateObj.getHours();
-                let mins = now.getMinutes() - birthDateObj.getMinutes();
-                let secs = now.getSeconds() - birthDateObj.getSeconds();
-                let ms = now.getMilliseconds() - birthDateObj.getMilliseconds();
-
-                if (ms < 0) { ms += 1000; secs--; }
-                if (secs < 0) { secs += 60; mins--; }
-                if (mins < 0) { mins += 60; hours--; }
-                if (hours < 0) { hours += 24; days--; }
-
-                if (days < 0) {
-                    // Borrow days from previous month
-                    const prevMonth = new Date(now.getFullYear(), now.getMonth(), 0);
-                    days += prevMonth.getDate();
-                    months--;
-                }
-
-                if (months < 0) {
-                    months += 12;
-                    years--;
-                }
-
-                updateText('exact-years', years);
-                updateText('exact-months', months);
-                updateText('exact-days', days);
-                updateText('exact-hours', pad(hours));
-                updateText('exact-mins', pad(mins));
-                updateText('exact-secs', pad(secs));
-                updateText('exact-ms', pad(ms, 3));
-
-                // Next Birthday Countdown
-                let nextBday = new Date(now.getFullYear(), birthDateObj.getMonth(), birthDateObj.getDate(), birthDateObj.getHours(), birthDateObj.getMinutes());
-                if (now > nextBday) {
-                    nextBday.setFullYear(now.getFullYear() + 1);
-                }
-
-                let lastBday = new Date(nextBday.getFullYear() - 1, birthDateObj.getMonth(), birthDateObj.getDate(), birthDateObj.getHours(), birthDateObj.getMinutes());
-
-                // Progress
-                const yearTotalMs = nextBday.getTime() - lastBday.getTime();
-                const yearElapsedMs = now.getTime() - lastBday.getTime();
-                let pct = (yearElapsedMs / yearTotalMs) * 100;
-                if(pct < 0) pct = 0; if(pct > 100) pct = 100;
-
-                const fillEl = document.getElementById('year-progress-fill');
-                if(fillEl) fillEl.style.width = pct.toFixed(2) + '%';
-                updateText('year-progress-pct', pct.toFixed(1) + '%');
-
-                // Countdown Time Math
-                let cdMonths = nextBday.getMonth() - now.getMonth();
-                let cdDays = nextBday.getDate() - now.getDate();
-
-                if (cdDays < 0) {
-                    const prevM = new Date(nextBday.getFullYear(), nextBday.getMonth(), 0);
-                    cdDays += prevM.getDate();
-                    cdMonths--;
-                }
-                if (cdMonths < 0) {
-                    cdMonths += 12;
-                }
-
-                updateText('cd-months', cdMonths);
-                updateText('cd-days', cdDays);
-            }
-
-            // Loop
-            function updateLoop() {
-                calculateAgeDetails();
-                animationFrameId = requestAnimationFrame(updateLoop);
-            }
-
-            // Initialization
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-
-                const dVal = dobDateInput.value;
-                const tVal = dobTimeInput.value || "00:00";
-
-                if (!dVal) return;
-
-                // Create Date Object
-                const dtString = `${dVal}T${tVal}:00`;
-                birthDateObj = new Date(dtString);
-
-                // Validation against future dates
-                if (birthDateObj > new Date()) {
-                    alert("Date of birth cannot be in the future.");
-                    return;
-                }
-
-                // Populate Static Info
-                const dayOfWeek = new Intl.DateTimeFormat('en-US', { weekday: 'long' }).format(birthDateObj);
-                updateText('birth-weekday', dayOfWeek);
-
-                const monthIndex = birthDateObj.getMonth();
-                const mData = monthNames[monthIndex];
-
-                updateText('month-en', mData.en);
-                updateText('month-bn', mData.bn);
-                updateText('month-ar', mData.ar);
-
-                const nextBdayDateStr = new Intl.DateTimeFormat('en-US', { month: 'long', day: 'numeric' }).format(birthDateObj);
-                updateText('next-bday-date', nextBdayDateStr);
-
-                // Show Dashboard
-                dashboard.classList.add('active');
-
-                // Start Loop
-                if (animationFrameId) {
-                    cancelAnimationFrame(animationFrameId);
-                }
-                updateLoop();
-
-                // Smooth scroll to results
-                dashboard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            themeToggleBtn.addEventListener('click', () => {
+                currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+                localStorage.setItem('theme', currentTheme);
+                updateThemeUI();
             });
 
-        })();
-    </script>
+            // --- Language Switcher (BN/EN) ---
+            const langToggleBtn = document.getElementById('langToggle');
+            let currentLang = 'bn'; // Default language
+
+            const updateLanguageUI = () => {
+                const textElements = document.querySelectorAll('.lang-text');
+                textElements.forEach(el => {
+                    // Update text content safely
+                    el.innerHTML = sanitizeHTML(el.getAttribute(`data-${currentLang}`));
+                });
+                langToggleBtn.innerHTML = `<i class="fa-solid fa-globe" style="font-size: 1.1rem;"></i>`;
+                htmlTag.setAttribute('lang', currentLang);
+            };
+
+            langToggleBtn.addEventListener('click', () => {
+                currentLang = currentLang === 'bn' ? 'en' : 'bn';
+                // ফেইল-সেফ চেক: শুধু যে এলিমেন্টগুলোর রিয়েল ডেটা আছে, সেগুলোর ল্যাঙ্গুয়েজ আপডেট হবে
+                const textElements = document.querySelectorAll('.lang-text');
+                textElements.forEach(el => {
+                    const attrData = el.getAttribute(`data-${currentLang}`);
+                    if (attrData && attrData !== 'null') {
+                        el.innerHTML = sanitizeHTML(attrData);
+                    }
+                });
+                // আইকন পজিশনিং যাতে ফিক্সড থাকে
+                langToggleBtn.innerHTML = `<i class="fa-solid fa-globe" style="font-size: 0.95rem;"></i>`;
+                htmlTag.setAttribute('lang', currentLang);
+            });
+
+        });
+        </script>
+
+
+
+
+        <script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+import { getFirestore, collection, getDocs, query, orderBy, limit } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyC6AP7nKf7d720T0IEl7LRcLeVaak2a4s0",
+  authDomain: "knowlify-com.firebaseapp.com",
+  projectId: "knowlify-com",
+  storageBucket: "knowlify-com.firebasestorage.app",
+  messagingSenderId: "724166469100",
+  appId: "1:724166469100:web:0c136db1ad1e6c6bf00cc9",
+  measurementId: "G-KMQBBQGE6F"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+// ইউজার প্যানেলের জন্য নতুন পোস্ট সবার উপরে সাজানো
+const articlesQuery = query(collection(db, "articles"), orderBy("timestamp", "desc"), limit(20));
+const querySnapshot = await getDocs(articlesQuery);
+
+const container = document.getElementById("articlesContainer");
+window.allFetchedArticles = [];
+
+// ব্যানার পজিশন সেফটি চ্যানেল ইন্টিগ্রেশন
+const topBannerElement = document.getElementById('topPremiumBanner');
+const contentWrapper = document.querySelector('.content');
+if (topBannerElement && contentWrapper) {
+    contentWrapper.insertBefore(topBannerElement, container);
+}
+
+querySnapshot.forEach((doc) => {
+    const post = doc.data();
+
+    // ছবি না থাকলে সম্পূর্ণ ফাকা রাখার কন্ডিশনাল ট্র্যাকিং (পার্মানেন্ট ফিক্স)
+    let postImageUrl = "";
+    let hasImage = false;
+
+    if (post.images && post.images.length > 0 && post.images[0] && post.images[0] !== "" && !post.images[0].includes("undefined")) {
+        let rawUrl = post.images[0].trim();
+
+        // --- গুগল ড্রাইভ ডাইরেক্ট লিংক অটো-কনভার্টার ইঞ্জিন ---
+        // ইউজার গুগল ড্রাইভের যে লিংকই বসাক না কেন, কোড নিজে থেকেই আইডি (ID) বের করে ডাইরেক্ট ইমেজ লিংক বানিয়ে নেবে
+        if (rawUrl.includes("drive.google.com")) {
+            const driveIdMatch = rawUrl.match(/\/d\/([^/]+)/) || rawUrl.match(/id=([^&]+)/);
+            if (driveIdMatch && driveIdMatch[1]) {
+                postImageUrl = `https://drive.google.com/uc?export=view&id=${driveIdMatch[1]}`;
+            } else {
+                postImageUrl = rawUrl;
+            }
+        } else {
+            postImageUrl = rawUrl; // গুগল ড্রাইভ না হয়ে সাধারণ Base64 বা অন্য লিংক হলে স্বাভাবিক থাকবে
+        }
+
+        hasImage = true;
+    }
+
+    window.allFetchedArticles.push({
+        id: doc.id,
+        category: post.category || "General",
+        titleBn: post.title?.bn || post.title || "শিরোনামহীন",
+        content: post.content || "",
+        imageUrl: postImageUrl,
+        hasImage: hasImage
+    });
+});
+
+// ডাইনামিক রেন্ডারিং ইঞ্জিন (সার্চ এবং ফিল্টারের জন্য)
+const renderFilteredArticles = (articlesArray) => {
+    container.innerHTML = "";
+    if (articlesArray.length === 0) {
+        container.innerHTML = `<div style="text-align:center; padding:3rem; color:var(--text-muted); font-weight:600;">কোনো পোস্ট পাওয়া যায়নি!</div>`;
+        return;
+    }
+    articlesArray.forEach(post => {
+        // জাভাস্ক্রিপ্ট টগল করার জন্য একটি ইউনিক সেফ আইডি তৈরি
+        const uniqueId = `content_${post.id}`;
+
+        container.innerHTML += `
+        <article class="card" data-category="${post.category}">
+            ${post.hasImage && post.imageUrl !== "" ? `
+            <div class="card-img-wrapper" style="width: 100%; height: 250px; overflow: hidden;">
+                <img src="${encodeURI(post.imageUrl)}" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;" alt="${window.sanitizeHTML(post.titleBn)}" loading="lazy">
+            </div>` : ''}
+            <div class="card-body">
+                <div class="card-meta" style="color: var(--text-muted); font-size: 0.875rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--accent-blue);">
+                    📌 ${window.sanitizeHTML(post.category)}
+                </div>
+                <h2>${window.sanitizeHTML(post.titleBn || "শিরোনামহীন")}</h2>
+
+                <div id="${uniqueId}" style="max-height: 4.8em; overflow: hidden; transition: max-height 0.5s cubic-bezier(0, 1, 0, 1); color: var(--text-muted); font-size: 1rem; line-height: 1.6;">
+                    ${window.sanitizeHTML(post.content)}
+                </div>
+
+                <button onclick="window.toggleArticleReadMore('${uniqueId}', this)" style="background: transparent; color: var(--accent-blue); padding: 0; margin-top: 0.75rem; border: none; font-weight: 600; display: inline-flex; align-items: center; cursor: pointer; font-size: 0.95rem; box-shadow: none; transform: none;">
+                    আরও পড়ুন <i class="fa-solid fa-arrow-down" style="margin-left: 5px; font-size: 0.8rem;"></i>
+                </button>
+            </div>
+        </article>
+        `;
+    });
+};
+
+// একটি গ্লোবাল ভ্যারিয়েবল দিয়ে বর্তমান সিলেক্টেড ক্যাটাগরি ট্র্যাক করা (পুরনো নাল আইডি ফিক্স)
+window.currentActiveCategory = 'all';
+
+// ১. গ্লোবাল ক্যাটাগরি ফিল্টার ফাংশন (১০০% ফিক্সড)
+window.filterCategory = function(categoryName) {
+    document.getElementById('searchInput').value = ""; // সার্চ ক্লিয়ার করা
+    window.currentActiveCategory = categoryName; // সিলেক্টেড ক্যাটাগরি সেভ রাখা
+
+    if (categoryName === 'all') {
+        renderFilteredArticles(window.allFetchedArticles);
+    } else {
+        const filtered = window.allFetchedArticles.filter(a => a.category === categoryName);
+        renderFilteredArticles(filtered);
+    }
+};
+
+// ২. গ্লোবাল লাইভ সার্চ ফাংশন (১০০% ফিক্সড)
+window.liveSearch = function(searchQuery) {
+    const queryText = searchQuery.toLowerCase().trim();
+    const activeCategory = window.currentActiveCategory; // গ্লোবাল ভ্যারিয়েবল থেকে ডেটা নেওয়া হলো
+
+    let baseArticles = window.allFetchedArticles;
+    if (activeCategory !== 'all') {
+        baseArticles = window.allFetchedArticles.filter(a => a.category === activeCategory);
+    }
+
+    if (queryText === "") {
+        renderFilteredArticles(baseArticles);
+        return;
+    }
+
+    const filtered = baseArticles.filter(a =>
+        a.titleBn.toLowerCase().includes(queryText) ||
+        a.content.toLowerCase().includes(queryText)
+    );
+    renderFilteredArticles(filtered);
+};
+
+// ইনিশিয়াল রেন্ডার রান করা
+renderFilteredArticles(window.allFetchedArticles);
+
+// --- কাস্টম ক্যাটাগরি ড্রপডাউন কন্ট্রোল ফাংশন ---
+window.toggleCategoryDropdown = function(event) {
+    event.stopPropagation();
+    const dropdown = document.getElementById('customDropdown');
+    const icon = document.querySelector('.category-custom-btn i');
+
+    // টগল ক্লাস (অ্যানিমেশন চালু/বন্ধ করা)
+    dropdown.classList.toggle('show');
+
+    // আইকন ঘোরানো (Chevron Rotate Animation)
+    if (dropdown.classList.contains('show')) {
+        icon.style.transform = 'rotate(180deg)';
+    } else {
+        icon.style.transform = 'rotate(0deg)';
+    }
+};
+
+window.selectCategory = function(categoryValue) {
+    // বর্তমান ফিল্টারিং ফাংশন কল করা (বিন্দুমাত্র কোড নষ্ট না করে)
+    if (typeof window.filterCategory === 'function') {
+        window.filterCategory(categoryValue);
+    }
+
+    // সিলেক্ট করার পর ড্রপডাউন বন্ধ করা
+    const dropdown = document.getElementById('customDropdown');
+    const icon = document.querySelector('.category-custom-btn i');
+    dropdown.classList.remove('show');
+    icon.style.transform = 'rotate(0deg)';
+};
+
+// ড্রপডাউনের বাইরে ক্লিক করলে স্বয়ংক্রিয়ভাবে বন্ধ হওয়ার লজিক
+document.addEventListener('click', function(event) {
+    const dropdown = document.getElementById('customDropdown');
+    const icon = document.querySelector('.category-custom-btn i');
+    if (dropdown && dropdown.classList.contains('show')) {
+        dropdown.classList.remove('show');
+        if (icon) icon.style.transform = 'rotate(0deg)';
+    }
+});
+
+// --- মোবাইলের জন্য পিওর অ্যানিমেটেড সার্চ ইঞ্জিন কন্ট্রোল ---
+window.toggleMobileSearch = function(event) {
+    if (event) event.stopPropagation();
+    const searchBar = document.querySelector('.header-bottom-row');
+    const searchInput = document.getElementById('searchInput');
+
+    if (searchBar) {
+        searchBar.classList.toggle('active');
+        // ওপেন হওয়ার সাথে সাথে ইনপুট ফিল্ড ফোকাস হবে
+        if (searchBar.classList.contains('active') && searchInput) {
+            setTimeout(() => { searchInput.focus(); }, 100);
+        }
+    }
+};
+
+// ১. বাইরে ক্লিক করলে অথবা ২. স্ক্রল ডাউন শুরু করলেই সার্চবার স্মুথলি হাইড হয়ে যাওয়ার লজিক
+document.addEventListener('click', function(event) {
+    const searchBar = document.querySelector('.header-bottom-row');
+    const trigger = document.querySelector('.mobile-search-trigger');
+
+    if (searchBar && searchBar.classList.contains('active')) {
+        if (!searchBar.contains(event.target) && !trigger.contains(event.target)) {
+            searchBar.classList.remove('active');
+        }
+    }
+});
+
+window.addEventListener('scroll', function() {
+    const searchBar = document.querySelector('.header-bottom-row');
+    if (searchBar && searchBar.classList.contains('active')) {
+        // স্ক্রল করলেই কোনো এরর ছাড়া স্মুথলি ক্লোজ হবে
+        searchBar.classList.remove('active');
+    }
+}, { passive: true });
+
+// ৩. প্রিমিয়াম স্মুথ স্লাইড-ডাউন এবং বাটন টেক্সট এক্সচেঞ্জ মেথড
+window.toggleArticleReadMore = function(elementId, buttonElement) {
+    const targetBox = document.getElementById(elementId);
+    if (!targetBox) return;
+
+    // চেক করা হচ্ছে কন্টেন্ট বক্সটি কি বর্তমানে বন্ধ আছে নাকি খোলা
+    if (targetBox.style.maxHeight === "4.8em" || targetBox.style.maxHeight === "") {
+        // মসৃণভাবে নিচের দিকে পুরো লেখাটি ওপেন হবে
+        targetBox.style.transition = "max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1)";
+        targetBox.style.maxHeight = "2000px"; // বড় কন্টেন্টের জন্য সর্বোচ্চ লিমিট লক করা হলো
+
+        // বাটন টেক্সট ও আইকন পরিবর্তন
+        buttonElement.innerHTML = `সংক্ষিপ্ত করুন <i class="fa-solid fa-arrow-up" style="margin-left: 5px; font-size: 0.8rem;"></i>`;
+    } else {
+        // মসৃণভাবে আবার ৩ লাইনে সংকুচিত হয়ে যাবে
+        targetBox.style.transition = "max-height 0.4s ease-out";
+        targetBox.style.maxHeight = "4.8em";
+
+        // বাটন টেক্সট আগের অবস্থায় ফিরিয়ে নেওয়া
+        buttonElement.innerHTML = `আরও পড়ুন <i class="fa-solid fa-arrow-down" style="margin-left: 5px; font-size: 0.8rem;"></i>`;
+
+        // ইউজার স্ক্রিন যাতে হারিয়ে না যায়, তাই স্মুথলি কার্ডের শুরুতে স্ক্রল ব্যাক করানো
+        targetBox.closest('.card').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+};
+</script>
 </body>
 </html>
